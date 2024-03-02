@@ -1,0 +1,73 @@
+/* Global styles */
+:root {
+    --pri-orange: hsl(25, 97%, 53%);
+    --white: hsl(0, 0%, 100%);
+    --lt-grey: hsl(217, 12%, 63%);
+    --md-grey: hsl(216, 12%, 54%);
+    --dk-blue: hsl(213, 19%, 18%);
+    --v-dk-blue: hsl(216, 12%, 8%);
+}
+
+body, h1, h2, h3, h4, h5, h6, p,
+dl dd, blockquote, figure {
+    margin: 0;
+}
+
+html {
+    font-family: 'Overpass';
+}
+
+p {
+    font-size: 0.938rem;
+}
+
+.disabled {
+    display: none;
+}
+
+/* Mobile styles */
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    gap: 1rem;
+}
+
+.rating-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.circle {
+    display: flex;
+    width: 2.5rem;
+    height: 2.5rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10rem;
+    background-color: var(--lt-grey);
+    font-size: .875rem;
+}
+
+.star {
+    object-fit: contain;
+}
+
+.primary-btn {
+    border: none;
+    outline: none;
+    border-radius: 10rem;
+    background-color: var(--pri-orange);
+    color: var(--white);
+    padding: .875rem;
+
+    font-family: 'Overpass';
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: .875rem;
+    letter-spacing: 2px;
+}
+
+
+
