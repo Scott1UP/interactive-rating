@@ -56,6 +56,12 @@ p {
     color: var(--lt-grey);
 }
 
+.rating-form {
+    display: inherit;
+    flex-direction: inherit;
+    gap: 1rem;
+}
+
 .rating-group {
     display: flex;
     flex-direction: row;
@@ -84,6 +90,7 @@ p {
     background-color: var(--pri-orange);
     color: var(--white);
 }
+
 
 .selected {
     background-color: var(--lt-grey);
