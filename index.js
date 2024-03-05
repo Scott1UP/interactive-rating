@@ -1,38 +1,36 @@
-const form = document.querySelector("#ratingForm");
-const rating1 = document.querySelector("#userRating1");
-const rating2 = document.querySelector("#userRating2");
-const rating3 = document.querySelector("#userRating3");
-const rating4 = document.querySelector("#userRating4");
-const rating5 = document.querySelector("#userRating5");
+// Get all of the elements from the DOM that we need
+const ratings = document.querySelectorAll(".rating-selector");
 const button = document.querySelector(".primary-btn");
+const userRating = document.querySelector("#userRating")
 
-rating1.addEventListener("click", event => {
-    console.log(event);
-    rating1.classList.toggle("selected");
+// Set user rating value as 0
+let value = 0;
+
+// Add EventListener to all rating-selector elements
+ratings.forEach(rating => {
+    rating.addEventListener("click", event => {
+        // Define what a selected rating element is
+        const selectedRating = document.querySelector(".rating-selector.selected");
+        
+        // If a selected rating exists, remove its selected status
+        if (selectedRating) {
+            selectedRating.classList.remove("selected");
+        }
+
+        // Add selected status to the current target
+        event.currentTarget.classList.add("selected");
+
+        // set the value to be equal to the current selectors text content
+        value = event.currentTarget.textContent;
+
+        // Set the userRating we'll to be equal to value
+        userRating.textContent = value;
+    });
 });
 
-rating2.addEventListener("click", event => {
-    console.log(event);
-    rating2.classList.toggle("selected");
-});
-
-rating3.addEventListener("click", event => {
-    console.log(event);
-    rating3.classList.toggle("selected");
-});
-
-rating4.addEventListener("click", event => {
-    console.log(event);
-    rating4.classList.toggle("selected");
-});
-
-rating5.addEventListener("click", event => {
-    console.log(event);
-    if (rating5.classList.contains("selected")) {
-        rating5.classList.remove("selected");
-    }
-    else if (!rating5.classList.contains("selected")) {
-        rating5.classList.add("selected");
-    } 
+button.addEventListener("click", event => {
+    event.preventDefault();
+    document.querySelector("#ratingState").classList.add("disabled");
+    document.querySelector("#thankYouState").classList.remove("disabled");
 });
 
